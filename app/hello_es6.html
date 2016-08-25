@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>React-course</title>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/react/dist/react.js"></script>
+<script src="../node_modules/react-dom/dist/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+<script type="text/babel">
+class Clickable extends React.Component {
+	constructor(props){
+		super(props);
+		this.state={clicks:0};
+		this.clicked=this.clicked.bind(this)
+	}
+	render(){
+		return <p onClick={this.clicked}>
+			Hep hep {this.props.something} click count: {this.state.clicks}
+		</p>
+	}
+
+	clicked(){
+		this.state.clicks++;
+		this.setState({clicks: this.state.clicks});
+	}
+}
+
+
+$(document).ready(function() {
+ReactDOM.render(
+	<h1>Hello world!
+		<Clickable something="click here" />
+	</h1>,
+	document.getElementById('hello')
+);
+});
+</script>
+</head>
+<body>
+<div id="hello">Soon to disappear</div>
+</body>
+</html>
