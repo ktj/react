@@ -6,9 +6,24 @@
 <script src="../node_modules/react/dist/react.js"></script>
 <script src="../node_modules/react-dom/dist/react-dom.js"></script>
 <script>
+var Clickable = React.createClass({
+	displayName: "Clickable",
+	getInitialState: function(){
+		return {clicks:0};
+	},
+	render: function(){
+		return React.createElement("p",{onClick:this.clicked}, "Hep hep:",this.props.something," click count:"+this.state.clicks);
+	},
+	clicked: function(event){
+		this.state.clicks++;
+		this.setState({clicks: this.state.clicks});
+	}
+});
+
+
 $(document).ready(function () {
 ReactDOM.render(
-React.createElement("h1", null, "Hello world!"),
+React.createElement("h1", null, "Hello world!",React.createElement(Clickable,{something:"click here"})),
 document.getElementById('hello')
 );
 });
