@@ -47,7 +47,9 @@ class Calculator extends React.Component {
 		this.state[event.target.name] = event.target.value
 		this.state.result = parseInt(this.state.field1) + parseInt(this.state.field2);
 		this.setState(this.state);
-		this.props.onResultChange(this.state.result);
+		if(this.props.onResultChange) {
+			this.props.onResultChange(this.state.result);
+		}
 	}
 }
 
