@@ -1,5 +1,8 @@
 import Calculator from './calculator';
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('example')
-);
+import BookList from './booklist';
+$(document).ready(function() {
+	ReactDOM.render(
+	    <BookList/>,
+	  document.getElementById('container')
+	);
+});

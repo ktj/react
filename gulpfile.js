@@ -182,7 +182,7 @@ gulp.task("jsxES6",function(){
       })
       .transform(babelify.configure({presets: ["es2015","react"]}))
       .bundle()
-      .pipe(source('bundledapp.js'))
+      .pipe(source('bundleapp.js'))
       .pipe(gulp.dest(appDir));
 }); 
 
