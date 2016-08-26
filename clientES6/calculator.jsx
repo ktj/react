@@ -1,9 +1,9 @@
-class Calculator extends React.Component {
+export default class Calculator extends React.Component {
 	constructor(props){
 		super(props);
 		this.state={field1:0,field2:0, result:0};
 		this.fieldChanged=this.fieldChanged.bind(this);
-	};
+	}
 	
 
 	render(){
