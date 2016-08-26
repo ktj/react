@@ -8,7 +8,7 @@ $(document).ready(function() {
 	var IndexRoute=ReactRouter.IndexRoute;
 
 	ReactDOM.render(
-		<Router history={ReactRouter.hashHistory}>
+		<Router history={ReactRouter.browserHistory}>
 			<Route path="/" component={BookMain}>
 				<Route path="books" >
 					<IndexRoute component={BookList} />
