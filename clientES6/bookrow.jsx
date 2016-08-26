@@ -5,8 +5,10 @@ export default class BookRow extends React.Component {
 	
 
 	render(){
+		var Link=ReactRouter.Link;
 		return <tr>
-			<td>{this.props.book.id}</td>
+
+			<td><Link to={`/books/${this.props.book.id}`}>{this.props.book.id}</Link></td>
 			<td>{this.props.book.title}</td>
 			<td>{this.props.book.author}</td>
 			<td>{this.props.book.description}</td>
