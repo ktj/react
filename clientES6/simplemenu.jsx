@@ -12,6 +12,8 @@ export default class SimpleMenu extends React.Component {
 				<Link to="/books">Root</Link>
 				<Link to="/books/authors">Authors</Link>
 				<Link to="/calc">Calculator</Link>
+				<Link to="/?lang=fi">Fi</Link>
+				<Link to="/?lang=en">En</Link>
 			</div>
 	}
 

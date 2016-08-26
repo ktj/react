@@ -29,6 +29,7 @@ export default class BookList extends React.Component {
 	}
 
 	render(){
+		var tx=this.context.tx;
 		var titleFilter=(book)=>{return book.title.toUpperCase().indexOf(this.state.titleFilter.toUpperCase())};
 		var authorFilter=(book)=>{return book.author.toUpperCase().indexOf(this.state.authorFilter.toUpperCase())};
 		return <table className="table">
@@ -36,7 +37,7 @@ export default class BookList extends React.Component {
 				<tr>
 					<th>
 						<select onChange={this.sortChanged} value={this.state.sort}>
-							<option value="title">Title</option>
+							<option value="title">{tx.book.title}</option>
 							<option value="author">Author</option>
 						</select>
 					</th>
@@ -65,4 +66,8 @@ export default class BookList extends React.Component {
 		</table>
 	}
 
+}
+
+BookList.contextTypes={
+	tx:React.PropTypes.object
 }

@@ -1,0 +1,11 @@
+{
+	"title":"Kirjaohjelma",
+	"buttons": {
+		"delete": "Poista",
+		"create": "Luo",
+		"back": "Takaisin"
+	},
+	"book": {
+		"title": "Otsikko"
+	}
+}
