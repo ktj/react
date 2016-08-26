@@ -9,11 +9,11 @@ export default class SimpleMenu extends React.Component {
 		var Link=ReactRouter.Link;
 		return <div>
 				<h1>Menu</h1>
-				<Link to="/books">Root</Link>
-				<Link to="/books/authors">Authors</Link>
-				<Link to="/calc">Calculator</Link>
-				<Link to="/?lang=fi">Fi</Link>
-				<Link to="/?lang=en">En</Link>
+				<span><Link to="/books">Root</Link> </span>
+				<span><Link to="/books/authors">Authors</Link> </span>
+				<span><Link to="/calc">Calculator</Link> </span>
+				<span><Link to="/?lang=fi">Fi</Link> </span>
+				<span><Link to="/?lang=en">En</Link> </span>
 			</div>
 	}
 

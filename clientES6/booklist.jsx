@@ -1,4 +1,5 @@
 import BookRow from './bookrow';
+import {BookModel} from './bookmodel';
 
 export default class BookList extends React.Component {
 	constructor(props){
@@ -7,13 +8,20 @@ export default class BookList extends React.Component {
 			titleFilter:"",
 			authorFilter:"",
 			sort:"title",
-			books:[{id:1,title:"Harry Potter",author:"Rowling",description:"Wizards 'n' stuff"},
-			       {id:2,title:"Lord of the rings",author:"Tolkien",description:"Hobbits 'n' stuff"},
-			       {id:3,title:"James Bond",author:"Fleming",description:"Guns 'n' stuff"}]
+			books: BookModel.books
 		}
 		this.authorFilterChanged=this.authorFilterChanged.bind(this);
 		this.titleFilterChanged=this.titleFilterChanged.bind(this);
 		this.sortChanged=this.sortChanged.bind(this);
+		this.receivedBooks=this.receivedBooks.bind(this);
+	}
+
+	componentDidMount(){
+		BookModel.load(this.receivedBooks);
+	}
+
+	receivedBooks(){
+		this.setState({books:BookModel.books});
 	}
 
 	authorFilterChanged(event){
